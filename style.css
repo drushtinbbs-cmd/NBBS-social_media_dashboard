@@ -1,12 +1,16 @@
 body{
 margin:0;
 padding:0;
-font-family:'Inter', sans-serif;
+font-family:'Inter',sans-serif;
 background:#f5f5f5;
+overflow-x:hidden;
 }
+
+/* MAIN LAYOUT */
 
 .main-container{
 display:flex;
+min-height:100vh;
 }
 
 /* SIDEBAR */
@@ -15,17 +19,19 @@ display:flex;
 width:260px;
 background:#202A5A;
 min-height:100vh;
-padding:25px;
+padding:25px 20px;
 position:fixed;
 left:0;
 top:0;
 overflow-y:auto;
+z-index:1000;
+transition:0.3s;
 }
 
 .dashboard-title{
 color:white;
 font-size:22px;
-font-weight:bold;
+font-weight:700;
 line-height:1.4;
 margin-bottom:40px;
 }
@@ -37,18 +43,18 @@ margin:0;
 }
 
 .sidebar ul li{
-margin-bottom:18px;
+margin-bottom:12px;
 }
 
 .sidebar ul li a{
 color:white;
 text-decoration:none;
-font-size:17px;
 display:flex;
 align-items:center;
 gap:12px;
-padding:12px 15px;
+padding:14px 16px;
 border-radius:12px;
+font-size:16px;
 transition:0.3s;
 }
 
@@ -68,7 +74,7 @@ width:100%;
 
 .card-box{
 background:white;
-padding:25px;
+padding:24px;
 border-radius:18px;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
 margin-bottom:20px;
@@ -78,9 +84,38 @@ margin-bottom:20px;
 
 .table-section{
 background:white;
-padding:25px;
+padding:24px;
 border-radius:18px;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
+overflow-x:auto;
+}
+
+/* TEAM */
+
+.team-card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+text-align:center;
+height:100%;
+}
+
+.team-icon{
+font-size:40px;
+margin-bottom:20px;
+color:#202A5A;
+}
+
+.role{
+background:#eef2ff;
+color:#202A5A;
+padding:8px 16px;
+border-radius:30px;
+display:inline-block;
+margin-top:10px;
+font-size:14px;
+font-weight:600;
 }
 
 /* STATUS */
@@ -143,18 +178,80 @@ padding:6px 12px;
 border-radius:20px;
 }
 
-/* MOBILE */
+/* CALENDAR */
+
+#calendar{
+overflow-x:auto;
+}
+
+/* MOBILE RESPONSIVE */
 
 @media(max-width:768px){
 
+.main-container{
+flex-direction:column;
+}
+
+/* TOP NAVBAR */
+
 .sidebar{
 width:100%;
-height:auto;
+min-height:auto;
 position:relative;
+padding:15px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
+
+.dashboard-title{
+font-size:18px;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* HORIZONTAL MENU */
+
+.sidebar ul{
+display:flex;
+gap:10px;
+overflow-x:auto;
+width:100%;
+padding-bottom:10px;
+}
+
+.sidebar ul li{
+margin-bottom:0;
+flex-shrink:0;
+}
+
+.sidebar ul li a{
+padding:10px 14px;
+font-size:14px;
+white-space:nowrap;
+}
+
+/* CONTENT */
 
 .content-area{
 margin-left:0;
+padding:20px;
+}
+
+/* TABLE */
+
+table{
+min-width:700px;
+}
+
+/* HEADINGS */
+
+h1{
+font-size:24px;
+}
+
+.card-box{
+padding:20px;
 }
 
 }
